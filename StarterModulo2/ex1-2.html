@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1</title>
+</head>
+<body>
+    <button>Criar</button>
+    <section>
+        
+    </section>
+    
+    <script>
+    let btn =  document.querySelector('button')
+
+    //evento de criar a div 
+    btn.addEventListener('click', ()=>{
+        let section = document.querySelector('section')
+        let div =  document.createElement('div')
+        
+        div.style.width = "100px"
+        div.style.height = "100px"
+        div.style.backgroundColor = "red"
+        div.style.marginBottom = "10px"
+        div.style.marginTop = "10px"
+
+        section.appendChild(div)
+
+        //evento para mudar a cor da div ao passar o mouse
+        div.addEventListener('mouseover',()=>{
+        div.style.backgroundColor = `${getRandomColor()}`
+        })
+    })
+
+//funcao para gerar uma cor aleatoria e retornar o valor
+function getRandomColor() {
+    var letters = "0123456789ABCDEF";
+    var color = "#";
+    for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+   }
+    </script>
+    
+</body>
+</html>

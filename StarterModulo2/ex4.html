@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="nome" id="name">
+    <button>Adicionar</button>
+    <ul></ul>
+
+    <script>
+        let ul = document.querySelector('ul')
+        let btn = document.querySelector('button')
+        let input =  document.querySelector('input')
+
+
+        let nomes = ["Viviane","Giovanna","Davy Francisco"]
+
+        render()
+
+        //render os nomes do vetor
+        function render(){
+            input.value = ""
+            for (n of nomes){
+                let li = document.createElement('li')
+                let text = document.createTextNode(n)
+                ul.appendChild(li)
+                li.appendChild(text)
+            }
+        }
+        //adicionar um novo nome no vetor e render na lista
+        btn.addEventListener('click', ()=>{
+            ul.innerHTML=""
+            let inpVal = input.value
+            nomes.push(inpVal)
+            render()
+        })
+    </script>
+</body>
+</html>

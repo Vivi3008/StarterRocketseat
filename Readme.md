@@ -9,6 +9,6 @@ Exercicios feitos durante o curso de Javascript
 👤 **ViviRamos**
 
 
-* LinkedIn: [@https:linkedin.com/in/viviane-ramos-luz-346169187](https:linkedin.com/in/viviane-ramos-luz-346169187)
+* LinkedIn: [https:linkedin.com/in/viviane-ramos-luz-346169187](https:linkedin.com/in/viviane-ramos-luz-346169187)
 
 

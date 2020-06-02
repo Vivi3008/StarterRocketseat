@@ -11,8 +11,9 @@ btn.addEventListener('click', ()=>{
 
     axios.get(`https://api.github.com/users/${user}/repos`)
      .then((response)=>{
+         console.log(response.data)
         for(res of response.data){
-            loadRepos(res.name)
+            loadRepos(res.name,res.html_url)
         }
     })
      .catch((error)=>{
@@ -26,13 +27,21 @@ btn.addEventListener('click', ()=>{
     user = ""
 })
 
-function loadRepos(repo){
+function loadRepos(repo,url){
   let ul = document.querySelector('ul')
   let li =  document.createElement('li')
-    let text = document.createTextNode(repo)
+  let text = document.createTextNode(repo)
+  let a = document.createElement('a')
+  let txt = document.createTextNode(' Acessar')
+  a.setAttribute('href',url)
+  a.setAttribute('target', '_blank')
+
 
   ul.appendChild(li)
   li.appendChild(text)
+  li.appendChild(a)
+  a.appendChild(txt)
+
 }
 
 function startPreloader(){
